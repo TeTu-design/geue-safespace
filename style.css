@@ -281,5 +281,71 @@ footer > * {
   margin: 0 auto;
   padding: 0 1rem;
 }
+/* Einheitlicher Rand für Kontaktseite */
+#kontakt {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* Hervorhebung des Meldeformular-Bereichs im Kontaktformular */
+#kontakt form {
+  background: linear-gradient(145deg, rgba(14,165,164,0.07), rgba(245,158,11,0.04));
+  border: 1px solid rgba(14,165,164,0.25);
+  border-left: 6px solid var(--brand-2);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+  transition: box-shadow 0.3s ease;
+}
 
+#kontakt form:hover {
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+/* Einheitliches Layout im Formular */
+#kontakt label {
+  font-weight: 600;
+  color: var(--brand);
+}
+
+#kontakt .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#kontakt textarea,
+#kontakt select {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: .6rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: .7rem .8rem;
+  background: #fff;
+}
+
+#kontakt textarea:focus,
+#kontakt select:focus {
+  outline: none;
+  border-color: var(--brand-2);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+#kontakt button {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: .8rem;
+  padding: .8rem 1.2rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+#kontakt button:hover {
+  transform: translateY(-1px);
+}
 

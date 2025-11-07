@@ -22,6 +22,7 @@
           <li><a href="massnahmen.html">Maßnahmen</a></li>
           <li><a href="kontakt.html" class="active">Kontakt</a></li>
           <li><a href="index.html#hilfe">Hilfe</a></li>
+          <li><a href="index.html#meldewege">Meldewege</a></li>
         </ul>
       </nav>
     </div>
@@ -91,6 +92,67 @@
       </div>
     </section>
   </main>
+     <section id="kontakt" aria-labelledby="kontakt-h2">
+  <h2 id="kontakt-h2">Kontakt / (anonyme) Meldung</h2>
+
+  <form action="https://formsubmit.co/teresa.tuncel@geue.nrw.schule" method="POST">
+    <!-- Optionen (empfohlen) -->
+    <input type="hidden" name="_subject" value="Neue Meldung über die Schul-Website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="row">
+      <div>
+        <label for="name">Name (optional)</label>
+        <input id="name" name="name" autocomplete="name">
+      </div>
+      <div>
+        <label for="email">E-Mail (optional)</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+
+      </div>
+    </div>
+<section id="kontakt">
+
+  <form action="https://formsubmit.co/teresa.tuncel@geue.nrw.schule" method="POST">
+    
+       <div class="row">
+      <div>
+        <label for="rolle">Ich bin *</label>
+        <select id="rolle" name="rolle" required>
+          <option value="">Bitte wählen …</option>
+          <option>Schüler*in</option>
+          <option>Elternteil</option>
+          <option>Lehrkraft</option>
+          <option>Sonstige*r</option>
+        </select>
+      </div>
+      <div>
+        <label for="kategorie">Kategorie *</label>
+        <select id="kategorie" name="kategorie" required>
+          <option value="">Bitte wählen …</option>
+          <option>Rassismus</option>
+          <option>Sexismus</option>
+          <option>Queerfeindlichkeit</option>
+          <option>Antisemitismus</option>
+          <option>Mobbing/Hate Speech</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="beschreibung">Beschreibung des Vorfalls *</label>
+      <textarea id="beschreibung" name="beschreibung" rows="5" required></textarea>
+    </div>
+
+    <div>
+      <label for="wuensche">Was wünschst du dir?</label>
+      <textarea id="wuensche" name="wuensche" rows="3"
+        placeholder="z. B. Gespräch, Schutzmaßnahme, Information"></textarea>
+    </div>
+    <button type="submit">Absenden</button>
+  </form>
 </section>
  <footer>
   <p>© 2025 Gymnasium Essen-Überruhr · 
