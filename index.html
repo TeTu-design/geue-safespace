@@ -222,8 +222,65 @@
   </p>
 </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('kontakt-form');
+  const successBox = document.getElementById('success-message');
+  const errorBox = document.getElementById('error-message');
+  const submitBtn = document.getElementById('kontakt-submit');
+
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Buttons & Meldungen zurücksetzen
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Senden …';
+      successBox.classList.remove('show');
+      errorBox.classList.remove('show');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(function () {
+        // Erfolg: Formular ausblenden, Meldung anzeigen
+        form.classList.add('hidden');
+        successBox.classList.add('show');
+        errorBox.classList.remove('show');
+
+        // zum Beginn des Kontaktbereichs scrollen
+        document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+
+        // Formular nach 10 Sekunden wieder anzeigen & zurücksetzen
+        setTimeout(function () {
+          form.reset();
+          form.classList.remove('hidden');
+          successBox.classList.remove('show');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }, 10000);
+      })
+      .catch(function () {
+        // Fehler: Fehlerbox anzeigen, Formular sichtbar lassen
+        errorBox.classList.add('show');
+        successBox.classList.remove('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+
+        document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  // Falls du irgendwo ein Element mit id="year" einbaust, hier wird es gesetzt
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
+</script>
+
 </body>
 </html>
